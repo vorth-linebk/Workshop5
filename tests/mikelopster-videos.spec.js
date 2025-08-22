@@ -7,8 +7,8 @@ test.describe('Mikelopster Home - Videos section', () => {
     const videosRegion = page.getByRole('region', { name: 'Video list' });
     await expect(videosRegion.getByRole('heading', { level: 2, name: 'Videos' })).toBeVisible();
 
-    const videoLinks = videosRegion.getByRole('link');
-    await expect(videoLinks).toHaveCount(12);
+    const videoCards = videosRegion.locator('a:has(h3)');
+    await expect(videoCards).toHaveCount(12);
   });
 });
 
